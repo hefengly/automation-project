@@ -1,7 +1,5 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+<p>bb</p>
 </template>
 
 <script type="text/acmascript-6">
