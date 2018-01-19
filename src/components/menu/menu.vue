@@ -15,7 +15,7 @@
       <el-container>
         <el-aside width="200px"  class="mainMenu MenuH">
             <el-menu class="el-menu-vertical-demo mainMenu"
-            text-color="black" active-text-color="black" active-background-color>
+            text-color="black" active-text-color="black">
               <el-submenu index="1">
                 <template slot="title">
                   <i class="el-icon-document"></i>
@@ -88,8 +88,7 @@
   .el-main {
     background-color: white;
     color: #333;
-    text-align: center;
-    line-height: 160px;
+    /* text-align: center; */
   }
   
   body > .el-container {
@@ -122,13 +121,17 @@
     margin: 0 15px 0 0;
   }
   .mainMenu {
-    background-color: rgb(242,242,242 )
+    background-color: rgb(242,242,242 );
+    
   }
   .secondMenu {
     background-color:  rgb(220,220,220 )
   }
   .mainMenu ul {
     border-right: 0;
+  }
+  .mainMenu li {
+    border-bottom: 1px solid rgb(210,210,210 );
   }
   .MenuH {
     position: absolute;
