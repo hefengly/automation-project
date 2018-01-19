@@ -16,27 +16,29 @@
         <el-aside width="200px"  class="mainMenu MenuH">
             <el-menu class="el-menu-vertical-demo mainMenu"
             text-color="black" active-text-color="black" active-background-color>
-              <router-link to="user">
-                  <el-menu-item index="1">
-                    <i class="el-icon-menu"></i>
-                    <span slot="title">人员管理</span>
-                  </el-menu-item>
-              </router-link>
+              <el-submenu index="1">
+                <template slot="title">
+                  <i class="el-icon-document"></i>
+                  <span>系统管理</span>
+                </template>            
+                <router-link to="user"><el-menu-item index="1-1" class="secondMenu">人员管理</el-menu-item></router-link>
+              </el-submenu>
               <el-submenu index="2">
                 <template slot="title">
-                  <i class="el-icon-location"></i>
+                  <i class="el-icon-printer"></i>
                   <span>设备管理</span>
                 </template>            
-                <router-link to="equipment"><el-menu-item index="1-1" class="mainMenu">地点一</el-menu-item></router-link>
-                <el-menu-item index="1-2" class="mainMenu">地点二</el-menu-item>
-                <el-menu-item index="1-3" class="mainMenu">地点三</el-menu-item>
+                <router-link to="equipment"><el-menu-item index="1-1" class="secondMenu">地点一</el-menu-item></router-link>
+                <el-menu-item index="1-2" class="secondMenu">地点二</el-menu-item>
+                <el-menu-item index="1-3" class="secondMenu">地点三</el-menu-item>
               </el-submenu>
-              <router-link to="warnning">
-                <el-menu-item index="3">
-                  <i class="el-icon-menu"></i>
-                  <span slot="title">警报管理</span>
-                </el-menu-item>
-              </router-link>
+              <el-submenu index="3">
+                <template slot="title">
+                  <i class="el-icon-warning"></i>
+                  <span>警报管理</span>
+                </template>            
+                <router-link to="warnning"><el-menu-item index="1-1" class="secondMenu">警报管理</el-menu-item></router-link>
+              </el-submenu>
             </el-menu>
         </el-aside>
         <el-main class="mainH">
@@ -121,6 +123,9 @@
   }
   .mainMenu {
     background-color: rgb(242,242,242 )
+  }
+  .secondMenu {
+    background-color:  rgb(220,220,220 )
   }
   .mainMenu ul {
     border-right: 0;
