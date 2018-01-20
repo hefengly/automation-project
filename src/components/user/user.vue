@@ -71,7 +71,7 @@
         <el-table-column property="phone" label="电话"></el-table-column>
       </el-table>
       <div slot="footer" class="dialog-footer">
-        <el-button @click="addVisible = false">取 消</el-button>
+        <el-button @click="deleteVisible = false">取 消</el-button>
         <el-button type="danger" @click="sureDelete()">删 除</el-button>
       </div>
     </el-dialog>
@@ -93,7 +93,7 @@
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button @click="addVisible = false">取 消</el-button>
+        <el-button @click="updataVisible = false">取 消</el-button>
         <el-button type="primary" @click="sureUpdata()">修 改</el-button>
       </div>
     </el-dialog>
@@ -181,7 +181,7 @@
     //是否删除用户
     isDelete() {
       if(this.currentRow == null) {
-        alert("未选择");
+        this.feedbackMessage("请先选择要操作的用户信息",'warning')
       } else {
         this.deleteVisible = true;    
         Vue.set(this.theDeleteUser, 0, this.currentRow);
@@ -203,7 +203,7 @@
     isupdata() {
       console.log(this.updataForm)
       if(this.currentRow == null) {
-        alert("未选择")
+        this.feedbackMessage("请先选择要操作的用户信息",'warning')
       } else {
         this.updataVisible = true;
       } 
@@ -216,8 +216,16 @@
       //发请求
 
       //请求结果
-      console.log("已成功修改");
 
+    },
+
+    //显示操作反馈信息
+    feedbackMessage(message,type) {
+      this.$message({
+        showClose: true,
+        message: message,
+        type: type
+      });
     }
   }
   }
