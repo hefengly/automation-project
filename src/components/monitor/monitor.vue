@@ -157,11 +157,11 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
   body
-    background:rgb(52, 63, 200)
     // background:black
     // background-image:url(./photos/3.png)
     margin: 0
     padding: 0
+    background:rgb(52, 63, 200)
 
   #app
     position: fixed
