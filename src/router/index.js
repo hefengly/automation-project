@@ -20,17 +20,17 @@ export default new Router({
       component: menu,
       children: [
         {
-          path: '/user',
+          path: 'user',
           name: 'user',
           component: user
         },
         {
-          path: '/equipment',
+          path: 'equipment/:id',
           name: 'equipment',
           component: equipment
         },
         {
-          path: '/warnning',
+          path: 'warnning',
           name: 'warnning',
           component: warnning
         }

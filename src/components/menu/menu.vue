@@ -21,7 +21,7 @@
                   <i class="el-icon-document"></i>
                   <span>系统管理</span>
                 </template>            
-                <router-link to="user"><el-menu-item index="1-1" class="secondMenu">人员管理</el-menu-item></router-link>
+                <router-link to="/menu/user"><el-menu-item index="1-1" class="secondMenu">人员管理</el-menu-item></router-link>
               </el-submenu>
               <el-submenu index="2">
                 <template slot="title">
@@ -31,7 +31,7 @@
                 <!-- <router-link to="equipment?linzfain"><el-menu-item index="1-1" class="secondMenu">工学二号馆</el-menu-item></router-link>
                 <el-menu-item index="1-2" class="secondMenu">地点二</el-menu-item>
                 <el-menu-item index="1-3" class="secondMenu">地点三</el-menu-item> -->
-                <router-link v-for="item in eqmVicinity" :key="item.id" :to="equipmentName(item.id)" ><el-menu-item index="1-1" class="secondMenu">{{item.name}}</el-menu-item></router-link>
+                <router-link v-for="item in eqmVicinity" :key="item.id" :to="{ name:'equipment', params: {id:item.id}}" ><el-menu-item index="1-1" class="secondMenu">{{item.name}}</el-menu-item></router-link>
               </el-submenu>
               <el-submenu index="3">
                 <template slot="title">
@@ -76,10 +76,10 @@
   },
   methods: {
 
-    //将设备信息通过路由传递
-    equipmentName(id) {
-      return 'equipment?id='+id;
-    }
+    // //将设备信息通过路由传递
+    // equipmentName(id) {
+    //   return 'equipment?id='+id;
+    // }
   },
 
   computed: {
