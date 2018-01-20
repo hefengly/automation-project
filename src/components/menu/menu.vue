@@ -28,9 +28,10 @@
                   <i class="el-icon-printer"></i>
                   <span>设备管理</span>
                 </template>            
-                <router-link to="equipment"><el-menu-item index="1-1" class="secondMenu">地点一</el-menu-item></router-link>
+                <!-- <router-link to="equipment?linzfain"><el-menu-item index="1-1" class="secondMenu">工学二号馆</el-menu-item></router-link>
                 <el-menu-item index="1-2" class="secondMenu">地点二</el-menu-item>
-                <el-menu-item index="1-3" class="secondMenu">地点三</el-menu-item>
+                <el-menu-item index="1-3" class="secondMenu">地点三</el-menu-item> -->
+                <router-link v-for="item in eqmVicinity" :key="item.id" :to="equipmentName(item.id)" ><el-menu-item index="1-1" class="secondMenu">{{item.name}}</el-menu-item></router-link>
               </el-submenu>
               <el-submenu index="3">
                 <template slot="title">
@@ -57,10 +58,31 @@
 
   data: function(){
     return {
-      
+      eqmVicinity:[
+        {
+          name: '工学一号馆',
+          id: 111,
+        },
+        {
+          name: '工学二号馆',
+          id: 222,
+        },
+        {
+          name: '工学三号馆',
+          id: 333,
+        }
+      ]
     }
   },
   methods: {
+
+    //将设备信息通过路由传递
+    equipmentName(id) {
+      return 'equipment?id='+id;
+    }
+  },
+
+  computed: {
 
   }
 
@@ -121,11 +143,10 @@
     margin: 0 15px 0 0;
   }
   .mainMenu {
-    background-color: rgb(242,242,242 );
-    
+    background-color: rgb(242,242,242 );   
   }
   .secondMenu {
-    background-color:  rgb(220,220,220 )
+    background-color:  rgb(212, 234, 245)
   }
   .mainMenu ul {
     border-right: 0;
